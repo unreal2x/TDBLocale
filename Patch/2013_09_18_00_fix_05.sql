@@ -11,9 +11,9 @@ UPDATE `creature_template` SET `faction_A` = 1620, `faction_H` = 1620 WHERE `ent
 -- fix npc 16522
 UPDATE `creature_template` SET `faction_A` = 1620, `faction_H` = 1620 WHERE `entry` = 16522;
 -- fix npc 17555
-UPDATE `creature` SET `position_x` = -3867.5600, `position_y` = -11641.0996 WHERE `guid` = 63164;
-UPDATE `points_of_interest` SET `x`= -3867, `y`= -11641 WHERE `entry`= 192;
-UPDATE `quest_poi_points` SET `x`= -3867, `y`= -11641 WHERE `questId`= 9605 AND `id`= 0 AND `idx`= 0;
+UPDATE `creature` SET `position_x` = -3864.9899, `position_y` = -11643.2998, `position_z` = -137.64599 WHERE `guid` = 63164;
+UPDATE `points_of_interest` SET `x`= -3864, `y`= -11643 WHERE `entry`= 192;
+UPDATE `quest_poi_points` SET `x`= -3864, `y`= -11643 WHERE `questId`= 9605 AND `id`= 0 AND `idx`= 0;
 -- 
 
 
