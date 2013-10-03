@@ -46,6 +46,10 @@ INSERT INTO `gameobject` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`position_x`
 (186566, 105568, 0, 1, 4294967295, -8847.42, -267.299, 81.4909, 0.103603, 0, 0, 0.0517781, 0.998659, 300, 0, 1);
 -- fix quest 37
 UPDATE `gameobject_template` SET `flags` = 0 WHERE `entry` = 55;
+-- fix quest 26414
+DELETE FROM `fishing_loot_template` WHERE (`entry`=1519);
+INSERT INTO `fishing_loot_template` VALUES 
+(1519, 58503, -25.1941, 1, 0, 1, 1);
 -- fix npc
 DELETE FROM `creature` WHERE `id` in (37574,37543,32520);
 UPDATE `creature_template` SET `faction_A` = 38, `faction_H` = 38, `maxlevel` = 2 WHERE `entry` = 49871;
@@ -233,25 +237,25 @@ INSERT INTO `waypoint_data` VALUES ('311930', '5', '-8887.88', '896.015', '105.3
 INSERT INTO `waypoint_data` VALUES ('311930', '6', '-8895.54', '911.779', '110.738', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '7', '-8854.39', '934.91', '102.533', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '8', '-8844.22', '922.301', '101.569', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('311930', '9', '-8835.15', '910.134', '98.5369', '0', '0', '385', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('311930', '9', '-8835.15', '910.134', '98.5369', '0', '0', '0', '385', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '10', '-8818.12', '872.19', '98.91', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '11', '-8846.35', '844.242', '98.8702', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '12', '-8837.71', '833.174', '99.1836', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '13', '-8825.62', '822.338', '99.0033', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('311930', '14', '-8824.68', '796.207', '97.378', '0', '0', '386', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('311930', '14', '-8824.68', '796.207', '97.378', '0', '0', '0', '386', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '15', '-8845.2', '776.592', '96.0731', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '16', '-8870.63', '762.34', '96.7809', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '17', '-8855.29', '742.306', '100.703', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('311930', '18', '-8847.73', '720.972', '97.4028', '0', '0', '387', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('311930', '18', '-8847.73', '720.972', '97.4028', '0', '0', '0', '387', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '19', '-8806.98', '741.291', '97.7508', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '20', '-8777.05', '743.235', '99.4993', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '21', '-8758.71', '729.247', '98.6169', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('311930', '22', '-8737.94', '701.145', '98.8372', '0', '0', '388', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('311930', '22', '-8737.94', '701.145', '98.8372', '0', '0', '0', '388', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '23', '-8718.12', '671.277', '98.8876', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '24', '-8705.49', '640.072', '100.33', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '25', '-8704.39', '614.71', '100.162', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '26', '-8710.58', '595.468', '98.8503', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('311930', '27', '-8736.5', '573.298', '97.3959', '0', '0', '389', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('311930', '27', '-8736.5', '573.298', '97.3959', '0', '0', '0', '389', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '28', '-8770.96', '608.729', '97.4164', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '29', '-8798.96', '589.885', '97.6081', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '30', '-8823.43', '621.763', '94.4329', '0', '0', '0', '0', '100', '0');
@@ -261,11 +265,11 @@ INSERT INTO `waypoint_data` VALUES ('311930', '33', '-8823.88', '678.449', '97.6
 INSERT INTO `waypoint_data` VALUES ('311930', '34', '-8847.46', '725.486', '97.461', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '35', '-8855.9', '741.608', '100.675', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '36', '-8870.68', '761.829', '96.783', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('311930', '37', '-8881.55', '754.924', '96.2457', '0', '0', '390', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('311930', '37', '-8881.55', '754.924', '96.2457', '0', '0', '0', '390', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '38', '-8909.39', '791.24', '87.4854', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '39', '-8931.01', '774.617', '88.461', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '40', '-8952.87', '770.324', '92.3752', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('311930', '41', '-8976.05', '778.586', '96.8896', '0', '0', '391', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('311930', '41', '-8976.05', '778.586', '96.8896', '0', '0', '0', '391', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '42', '-8989', '798.228', '102.24', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '43', '-8995.51', '823.625', '104.97', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('311930', '44', '-8984.68', '841.277', '105.783', '0', '60000', '0', '0', '100', '0');
@@ -534,13 +538,13 @@ DELETE FROM `creature_addon` WHERE `guid` = 79723;
 INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (79723, 797230, 0, 0, 0, 0, '');
 DELETE FROM `waypoint_data` WHERE `id` = 797230;
 INSERT INTO `waypoint_data` VALUES ('797230', '1', '-8880.11', '566.85', '93.5413', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('797230', '2', '-8835.48', '616.05', '93.4648', '0', '0', '271', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('797230', '3', '-8826.48', '617.939', '94.5474', '0', '60000', '272', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('797230', '2', '-8835.48', '616.05', '93.4648', '0', '0', '0', '271', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('797230', '3', '-8826.48', '617.939', '94.5474', '0', '60000', '0', '272', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('797230', '4', '-8810.98', '602.79', '96.5224', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('797230', '5', '-8808.6', '594.063', '97.1686', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('797230', '6', '-8820.48', '574.017', '94.3815', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('797230', '7', '-8836.96', '551.33', '96.1881', '0', '0', '273', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('797230', '8', '-8828.7', '549.945', '96.0016', '0', '6000', '274', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('797230', '7', '-8836.96', '551.33', '96.1881', '0', '0', '0', '273', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('797230', '8', '-8828.7', '549.945', '96.0016', '0', '6000', '0', '274', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('797230', '9', '-8818.54', '561.501', '94.4894', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('797230', '10', '-8810.57', '574.895', '95.1651', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('797230', '11', '-8784.7', '597.191', '97.6343', '0', '0', '0', '0', '100', '0');
@@ -554,11 +558,11 @@ INSERT INTO `waypoint_data` VALUES ('797230', '18', '-8852.67', '659.614', '97.0
 INSERT INTO `waypoint_data` VALUES ('797230', '19', '-8844.95', '638.042', '95.8141', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('797230', '20', '-8836.51', '634.128', '94.7394', '0', '0', '0', '0', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('797230', '21', '-8817.55', '639.872', '94.6043', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('797230', '22', '-8812.72', '631.563', '94.4423', '0', '0', '271', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('797230', '23', '-8814.24', '626.435', '94.3168', '0', '60000', '272', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('797230', '22', '-8812.72', '631.563', '94.4423', '0', '0', '0', '271', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('797230', '23', '-8814.24', '626.435', '94.3168', '0', '60000', '0', '271', '100', '0');
 INSERT INTO `waypoint_data` VALUES ('797230', '24', '-8831.24', '619.095', '93.9468', '0', '0', '0', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('797230', '25', '-8872.22', '596.114', '92.9442', '0', '0', '273', '0', '100', '0');
-INSERT INTO `waypoint_data` VALUES ('797230', '26', '-8891.32', '578.162', '92.9976', '0', '60000', '274', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('797230', '25', '-8872.22', '596.114', '92.9442', '0', '0', '0', '273', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('797230', '26', '-8891.32', '578.162', '92.9976', '0', '60000', '0', '274', '100', '0');
 -- fix npc 797 (Bo)
 DELETE FROM `creature` WHERE `id`=797;
 INSERT INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`,`npcflag`,`unit_flags`,`dynamicflags`) VALUES
